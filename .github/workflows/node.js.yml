@@ -42,5 +42,5 @@ jobs:
     - name: Get gitHUb token
       env:
                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-    - run: | 
+      run: | 
             cho "TOKEN IS $GITHUB_TOKEN"
