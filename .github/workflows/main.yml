@@ -1,17 +1,15 @@
-name: Hello World Training workflow
+name: Hello World Training Workflow
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
+
 jobs:
-      greet:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Greet The user
-            run: echo "Hello World!"
-          - name: List of files and Directories
-            run: ls -l
-          - name: chekout code
-          - uses: actions/checkout@v2
-          - name: here is 
-            run: ls -l
-          
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the User
+        run: echo "Hello World!"
+      - name: List Files in Directory
+        run: ls -l
+      - name: Checkout Code
+        uses: actions/checkout@v2
