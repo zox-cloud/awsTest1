@@ -6,6 +6,8 @@ on:
 jobs:
   greet:
     runs-on: ubuntu-latest
+    env:
+        MY_ENV: "John Doe"
     steps:
       - name: Greet the User
         run: echo "Hello World!"
@@ -13,3 +15,7 @@ jobs:
         run: ls -l
       - name: Checkout Code
         uses: actions/checkout@v2
+      - name: Run a multi-line Script
+        run: | 
+            echo "Hello $MY_ENV"
+            echo "Hello $GITHUB_ACTOR"
