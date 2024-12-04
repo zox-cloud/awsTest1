@@ -8,14 +8,16 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-latest
     permissions:
-            contents: read
-            pull-requests: write
+          contents: read
+          pull-requests: write
+    
             
 
     strategy:
@@ -37,3 +39,8 @@ jobs:
     - uses: davelosert/vitest-coverage-report-action@v1
       with:   
           vite-config-path: vite.config.ts
+    - name: Get gitHUb token
+      env:
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
+    - run: | 
+            cho "TOKEN IS $GITHUB_TOKEN"
